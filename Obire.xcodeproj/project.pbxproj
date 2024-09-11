@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A8608BA2C8E40CD000143AF /* ObireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608B92C8E40CD000143AF /* ObireApp.swift */; };
+		4A8608BC2C8E40CD000143AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608BB2C8E40CD000143AF /* ContentView.swift */; };
+		4A8608BE2C8E40CF000143AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8608BD2C8E40CF000143AF /* Assets.xcassets */; };
+		4A8608C12C8E40CF000143AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8608C02C8E40CF000143AF /* Preview Assets.xcassets */; };
+		4A8608CC2C8E40D0000143AF /* ObireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608CB2C8E40D0000143AF /* ObireTests.swift */; };
+		4A8608D62C8E40D0000143AF /* ObireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608D52C8E40D0000143AF /* ObireUITests.swift */; };
+		4A8608D82C8E40D0000143AF /* ObireUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608D72C8E40D0000143AF /* ObireUITestsLaunchTests.swift */; };
+		4A8608E52C8E43D3000143AF /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608E42C8E43D3000143AF /* GeneralSettings.swift */; };
+		4A8608E72C8E4474000143AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608E62C8E4474000143AF /* AppState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A8608C82C8E40D0000143AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A8608AE2C8E40CD000143AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A8608B52C8E40CD000143AF;
+			remoteInfo = Obire;
+		};
+		4A8608D22C8E40D0000143AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A8608AE2C8E40CD000143AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A8608B52C8E40CD000143AF;
+			remoteInfo = Obire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A8608B62C8E40CD000143AF /* Obire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Obire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8608B92C8E40CD000143AF /* ObireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObireApp.swift; sourceTree = "<group>"; };
+		4A8608BB2C8E40CD000143AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4A8608BD2C8E40CF000143AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A8608C02C8E40CF000143AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A8608C22C8E40CF000143AF /* Obire.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Obire.entitlements; sourceTree = "<group>"; };
+		4A8608C72C8E40D0000143AF /* ObireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8608CB2C8E40D0000143AF /* ObireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObireTests.swift; sourceTree = "<group>"; };
+		4A8608D12C8E40D0000143AF /* ObireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8608D52C8E40D0000143AF /* ObireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObireUITests.swift; sourceTree = "<group>"; };
+		4A8608D72C8E40D0000143AF /* ObireUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObireUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4A8608E42C8E43D3000143AF /* GeneralSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettings.swift; sourceTree = "<group>"; };
+		4A8608E62C8E4474000143AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		4A8608E82C8E5130000143AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A8608B32C8E40CD000143AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A8608C42C8E40D0000143AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A8608CE2C8E40D0000143AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A8608AD2C8E40CD000143AF = {
+			isa = PBXGroup;
+			children = (
+				4A8608B82C8E40CD000143AF /* Obire */,
+				4A8608CA2C8E40D0000143AF /* ObireTests */,
+				4A8608D42C8E40D0000143AF /* ObireUITests */,
+				4A8608B72C8E40CD000143AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A8608B72C8E40CD000143AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A8608B62C8E40CD000143AF /* Obire.app */,
+				4A8608C72C8E40D0000143AF /* ObireTests.xctest */,
+				4A8608D12C8E40D0000143AF /* ObireUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A8608B82C8E40CD000143AF /* Obire */ = {
+			isa = PBXGroup;
+			children = (
+				4A8608E82C8E5130000143AF /* Info.plist */,
+				4A8608B92C8E40CD000143AF /* ObireApp.swift */,
+				4A8608BB2C8E40CD000143AF /* ContentView.swift */,
+				4A8608BD2C8E40CF000143AF /* Assets.xcassets */,
+				4A8608C22C8E40CF000143AF /* Obire.entitlements */,
+				4A8608BF2C8E40CF000143AF /* Preview Content */,
+				4A8608E42C8E43D3000143AF /* GeneralSettings.swift */,
+				4A8608E62C8E4474000143AF /* AppState.swift */,
+			);
+			path = Obire;
+			sourceTree = "<group>";
+		};
+		4A8608BF2C8E40CF000143AF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4A8608C02C8E40CF000143AF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A8608CA2C8E40D0000143AF /* ObireTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A8608CB2C8E40D0000143AF /* ObireTests.swift */,
+			);
+			path = ObireTests;
+			sourceTree = "<group>";
+		};
+		4A8608D42C8E40D0000143AF /* ObireUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A8608D52C8E40D0000143AF /* ObireUITests.swift */,
+				4A8608D72C8E40D0000143AF /* ObireUITestsLaunchTests.swift */,
+			);
+			path = ObireUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A8608B52C8E40CD000143AF /* Obire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A8608DB2C8E40D0000143AF /* Build configuration list for PBXNativeTarget "Obire" */;
+			buildPhases = (
+				4A8608B22C8E40CD000143AF /* Sources */,
+				4A8608B32C8E40CD000143AF /* Frameworks */,
+				4A8608B42C8E40CD000143AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Obire;
+			packageProductDependencies = (
+			);
+			productName = Obire;
+			productReference = 4A8608B62C8E40CD000143AF /* Obire.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A8608C62C8E40D0000143AF /* ObireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A8608DE2C8E40D0000143AF /* Build configuration list for PBXNativeTarget "ObireTests" */;
+			buildPhases = (
+				4A8608C32C8E40D0000143AF /* Sources */,
+				4A8608C42C8E40D0000143AF /* Frameworks */,
+				4A8608C52C8E40D0000143AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A8608C92C8E40D0000143AF /* PBXTargetDependency */,
+			);
+			name = ObireTests;
+			productName = ObireTests;
+			productReference = 4A8608C72C8E40D0000143AF /* ObireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A8608D02C8E40D0000143AF /* ObireUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A8608E12C8E40D0000143AF /* Build configuration list for PBXNativeTarget "ObireUITests" */;
+			buildPhases = (
+				4A8608CD2C8E40D0000143AF /* Sources */,
+				4A8608CE2C8E40D0000143AF /* Frameworks */,
+				4A8608CF2C8E40D0000143AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A8608D32C8E40D0000143AF /* PBXTargetDependency */,
+			);
+			name = ObireUITests;
+			productName = ObireUITests;
+			productReference = 4A8608D12C8E40D0000143AF /* ObireUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A8608AE2C8E40CD000143AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					4A8608B52C8E40CD000143AF = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					4A8608C62C8E40D0000143AF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4A8608B52C8E40CD000143AF;
+					};
+					4A8608D02C8E40D0000143AF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4A8608B52C8E40CD000143AF;
+					};
+				};
+			};
+			buildConfigurationList = 4A8608B12C8E40CD000143AF /* Build configuration list for PBXProject "Obire" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A8608AD2C8E40CD000143AF;
+			packageReferences = (
+			);
+			productRefGroup = 4A8608B72C8E40CD000143AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A8608B52C8E40CD000143AF /* Obire */,
+				4A8608C62C8E40D0000143AF /* ObireTests */,
+				4A8608D02C8E40D0000143AF /* ObireUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A8608B42C8E40CD000143AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8608C12C8E40CF000143AF /* Preview Assets.xcassets in Resources */,
+				4A8608BE2C8E40CF000143AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A8608C52C8E40D0000143AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A8608CF2C8E40D0000143AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A8608B22C8E40CD000143AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8608BC2C8E40CD000143AF /* ContentView.swift in Sources */,
+				4A8608E52C8E43D3000143AF /* GeneralSettings.swift in Sources */,
+				4A8608BA2C8E40CD000143AF /* ObireApp.swift in Sources */,
+				4A8608E72C8E4474000143AF /* AppState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A8608C32C8E40D0000143AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8608CC2C8E40D0000143AF /* ObireTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A8608CD2C8E40D0000143AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8608D82C8E40D0000143AF /* ObireUITestsLaunchTests.swift in Sources */,
+				4A8608D62C8E40D0000143AF /* ObireUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A8608C92C8E40D0000143AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A8608B52C8E40CD000143AF /* Obire */;
+			targetProxy = 4A8608C82C8E40D0000143AF /* PBXContainerItemProxy */;
+		};
+		4A8608D32C8E40D0000143AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A8608B52C8E40CD000143AF /* Obire */;
+			targetProxy = 4A8608D22C8E40D0000143AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4A8608D92C8E40D0000143AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A8608DA2C8E40D0000143AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		4A8608DC2C8E40D0000143AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Obire/Obire.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Obire/Preview Content\"";
+				DEVELOPMENT_TEAM = 42NMTS82GU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Obire/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.pscoding.Obire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4A8608DD2C8E40D0000143AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Obire/Obire.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Obire/Preview Content\"";
+				DEVELOPMENT_TEAM = 42NMTS82GU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Obire/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.pscoding.Obire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4A8608DF2C8E40D0000143AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42NMTS82GU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.pscoding.ObireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Obire.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Obire";
+			};
+			name = Debug;
+		};
+		4A8608E02C8E40D0000143AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42NMTS82GU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.pscoding.ObireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Obire.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Obire";
+			};
+			name = Release;
+		};
+		4A8608E22C8E40D0000143AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42NMTS82GU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.pscoding.ObireUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Obire;
+			};
+			name = Debug;
+		};
+		4A8608E32C8E40D0000143AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42NMTS82GU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.pscoding.ObireUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Obire;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A8608B12C8E40CD000143AF /* Build configuration list for PBXProject "Obire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8608D92C8E40D0000143AF /* Debug */,
+				4A8608DA2C8E40D0000143AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A8608DB2C8E40D0000143AF /* Build configuration list for PBXNativeTarget "Obire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8608DC2C8E40D0000143AF /* Debug */,
+				4A8608DD2C8E40D0000143AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A8608DE2C8E40D0000143AF /* Build configuration list for PBXNativeTarget "ObireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8608DF2C8E40D0000143AF /* Debug */,
+				4A8608E02C8E40D0000143AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A8608E12C8E40D0000143AF /* Build configuration list for PBXNativeTarget "ObireUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8608E22C8E40D0000143AF /* Debug */,
+				4A8608E32C8E40D0000143AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A8608AE2C8E40CD000143AF /* Project object */;
+}
