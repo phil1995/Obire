@@ -17,7 +17,7 @@ struct GeneralSettings: View {
                                         HStack {
                                             Text(calendar.title)
                                             Spacer()
-                                            if appState.selectedCalendars.contains(calendar) {
+                                            if appState.selectedCalendars.contains(calendar.sourceIdentifier) {
                                                 Image(systemName: "checkmark")
                                             }
                                         }
@@ -80,5 +80,6 @@ struct GeneralSettings: View {
 }
 
 #Preview {
-    GeneralSettings(appState: .init() )
+    GeneralSettings(appState: .init(modelContext: .preview) )
+        .frame(width: 400, height: 400)
 }

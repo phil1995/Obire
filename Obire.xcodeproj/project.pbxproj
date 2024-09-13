@@ -16,6 +16,7 @@
 		4A8608D82C8E40D0000143AF /* ObireUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608D72C8E40D0000143AF /* ObireUITestsLaunchTests.swift */; };
 		4A8608E52C8E43D3000143AF /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608E42C8E43D3000143AF /* GeneralSettings.swift */; };
 		4A8608E72C8E4474000143AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608E62C8E4474000143AF /* AppState.swift */; };
+		4A8608F12C94D8E8000143AF /* SelectedCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608F02C94D8E8000143AF /* SelectedCalendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		4A8608E42C8E43D3000143AF /* GeneralSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettings.swift; sourceTree = "<group>"; };
 		4A8608E62C8E4474000143AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4A8608E82C8E5130000143AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4A8608F02C94D8E8000143AF /* SelectedCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCalendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				4A8608BF2C8E40CF000143AF /* Preview Content */,
 				4A8608E42C8E43D3000143AF /* GeneralSettings.swift */,
 				4A8608E62C8E4474000143AF /* AppState.swift */,
+				4A8608F02C94D8E8000143AF /* SelectedCalendar.swift */,
 			);
 			path = Obire;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8608F12C94D8E8000143AF /* SelectedCalendar.swift in Sources */,
 				4A8608BC2C8E40CD000143AF /* ContentView.swift in Sources */,
 				4A8608E52C8E43D3000143AF /* GeneralSettings.swift in Sources */,
 				4A8608BA2C8E40CD000143AF /* ObireApp.swift in Sources */,

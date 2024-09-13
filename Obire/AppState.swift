@@ -1,14 +1,16 @@
 import Foundation
 import EventKit
 import AppKit
+import SwiftData
 
 @MainActor
 @Observable
 final class AppState {
+    private let modelContext: ModelContext
     private let eventStore = EKEventStore()
     var hasCalendarAccess: Bool?
     
-    var selectedCalendars: Set<EKSource> = []
+    var selectedCalendars: Set<String> = []
     var calendars: [EKSource] { eventStore.sources }
     var upcomingEvent: EKEvent?
     var showsFullScreenOverlay: Bool { fullSizeOverlayController != nil }
@@ -17,6 +19,18 @@ final class AppState {
     
     private var fullSizeOverlayController: NSWindowController?
     
+    
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+        let calendars: [SelectedCalendar]
+        do {
+            calendars = try modelContext.fetch(FetchDescriptor<SelectedCalendar>())
+        } catch {
+            print("Failed to fetch SelectedCalendar")
+            calendars = []
+        }
+        self.selectedCalendars = Set(calendars.map(\.sourceIdentifier))
+    }
     
     func wantsToShowFullScreenOverlay() {
         fullSizeOverlayController = FullSizeOverlayController(rootView: FullSizeContentView(appState: self))
@@ -39,14 +53,19 @@ final class AppState {
     }
     
     func tappedOnCalendar(_ calendar: EKSource) {
-        let result = selectedCalendars.insert(calendar)
+        let result = selectedCalendars.insert(calendar.sourceIdentifier)
         defer {
+            try? modelContext.save()
             refreshUpcomingEvent()
         }
         guard result.inserted else {
-            selectedCalendars.remove(calendar)
+            selectedCalendars.remove(calendar.sourceIdentifier)
+            let entry = SelectedCalendar(sourceIdentifier: calendar.sourceIdentifier)
+            modelContext.delete(entry)
             return
         }
+        let entry = SelectedCalendar(sourceIdentifier: calendar.sourceIdentifier)
+        modelContext.insert(entry)
     }
     
     func stopCalendarEventsObservation() { 
@@ -70,7 +89,7 @@ final class AppState {
     }
     
     private func fetchCalendarEvents() -> [EKEvent] {
-        let calendars = selectedCalendars.flatMap { $0.calendars(for: .event) }
+        let calendars = calendars.filter { selectedCalendars.contains($0.sourceIdentifier) }.flatMap { $0.calendars(for: .event) }
         guard !calendars.isEmpty else {
             return []
         }

@@ -1,10 +1,23 @@
 import SwiftUI
+import SwiftData
 
 @MainActor
 @main
 struct ObireApp: App {
-    @State private var appState = AppState()
+    let container: ModelContainer
+    @State private var appState: AppState
     
+    
+    init() {
+        let container: ModelContainer
+        do {
+            container = try ModelContainer(for: SelectedCalendar.self)
+        } catch {
+            fatalError("Failed to created ModelContainer for SelectedCalendar")
+        }
+        self.container = container
+        self.appState = AppState(modelContext: container.mainContext)
+    }
     
     @State private var foo = false
     var body: some Scene {
@@ -17,6 +30,9 @@ struct ObireApp: App {
                 appState.stopCalendarEventsObservation()
             }
         }
+        .modelContainer(for: [
+            SelectedCalendar.self
+        ])
         /*
         WindowGroup("Overlay", id: WindowId.overlay) {
             FullSizeOverlay()
