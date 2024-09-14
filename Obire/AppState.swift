@@ -33,7 +33,16 @@ final class AppState {
     }
     
     func wantsToShowFullScreenOverlay() {
-        fullSizeOverlayController = FullSizeOverlayController(rootView: FullSizeContentView(appState: self))
+        guard let upcomingEvent else { return }
+        fullSizeOverlayController = FullSizeOverlayController(
+            rootView: FullSizeContentView(
+                title: upcomingEvent.title,
+                conferenceURL: upcomingEvent.conferenceURL,
+                startDate: upcomingEvent.startDate,
+                endDate: upcomingEvent.endDate,
+                appState: self
+            )
+        )
         fullSizeOverlayController?.showWindow(nil)
     }
     

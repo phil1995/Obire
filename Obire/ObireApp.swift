@@ -33,12 +33,6 @@ struct ObireApp: App {
         .modelContainer(for: [
             SelectedCalendar.self
         ])
-        /*
-        WindowGroup("Overlay", id: WindowId.overlay) {
-            FullSizeOverlay()
-        }
-        .windowStyle(.hiddenTitleBar)
-         */
     }
 }
 
@@ -61,51 +55,65 @@ struct FullSizeDebugView: View {
     }
 }
 
-/*
- import SwiftUIIntrospect
-/// Breaks animation after the first full screen display
-struct FullSizeOverlay: View {
-    @State private var closed = false
+struct FullSizeContentView: View {
+    @Environment(\.openURL) private var openURL
     
+    let title: String
+    let conferenceURL: URL?
+    let startDate: Date
+    let endDate: Date
+    let appState: AppState
+        
     var body: some View {
-        VStack {
-            Text("Go to your meeting!")
-                .frame(width: 500, height: 100)
-            Button("Close") {
-                closed = true
+        VStack(spacing: 64) {
+            Text(title)
+                .font(.system(size: 64))
+            
+            CountDownTimer(startDate: startDate)
+                .font(.title)
+            Text(startDate...endDate)
+            
+            
+            HStack {
+                Button("Dismiss") {
+                    appState.wantsToCloseFullScreenOverlay()
+                }
+                .buttonStyle(.bordered)
+                
+                if let conferenceURL {
+                    Button("Join") {
+                        openURL(conferenceURL)
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
-        .introspect(.window, on: .macOS(.v14, .v15)) { window in
-            if closed {
-                NSApplication.shared.presentationOptions = [] // reset the dock and menu bar
-                window.close()
-                window.level = .normal
-            } else {
-                window.styleMask = .borderless
-                window.setFrame(window.screen!.frame, display: true)
-                window.level = .floating // put window in front of all other windows
-                NSApplication.shared.presentationOptions = [.hideDock, .hideMenuBar]
-            }
-        }
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(hex: 0x267871),
+                    Color(hex: 0x136A8A)
+                ]),
+                startPoint: .trailing,
+                endPoint: .leading
+            )
+        )
     }
 }
- */
 
-struct FullSizeContentView: View {
-    let appState: AppState
+struct CountDownTimer: View {
+    let startDate: Date
+    var now: Date = .now
+    private var isInPast: Bool { startDate < now }
     
     var body: some View {
-        VStack {
-            Text("Go to your meeting!")
-                .frame(width: 500, height: 100)
-            Button("Close") {
-                appState.wantsToCloseFullScreenOverlay()
-            }
+        HStack {
+            Text(isInPast ? "Since" : "In")
+            Text(startDate, style: .timer)
+                .foregroundStyle(isInPast ? .red : .primary)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .ignoresSafeArea()
     }
 }
 
@@ -133,4 +141,14 @@ class FullSizeOverlayController<RootView: View>: NSWindowController {
         NSApplication.shared.presentationOptions = []
         super.close()
     }
+}
+
+#Preview {
+    FullSizeContentView(
+        title: "Example Meeting",
+        conferenceURL: .init(string: "example.com"),
+        startDate: .init(timeIntervalSince1970: 39_600),
+        endDate: .init(timeIntervalSince1970: 41_400),
+        appState: .init(modelContext: .preview)
+    )
 }
