@@ -83,6 +83,7 @@ final class AppState {
     
     func startCalendarEventsObservation() {
         calendarObservationTask?.cancel()
+        refreshUpcomingEvent()
         calendarObservationTask = Task {
             let newDay = NotificationCenter.default.publisher(for: .NSCalendarDayChanged).map(\.name)
             let eventStoreChanged = NotificationCenter.default.publisher(for: .EKEventStoreChanged).map(\.name)
