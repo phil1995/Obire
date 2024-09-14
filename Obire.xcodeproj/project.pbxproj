@@ -18,6 +18,7 @@
 		4A8608E72C8E4474000143AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608E62C8E4474000143AF /* AppState.swift */; };
 		4A8608F12C94D8E8000143AF /* SelectedCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608F02C94D8E8000143AF /* SelectedCalendar.swift */; };
 		4A8608F32C95E532000143AF /* EKEvent+ConferenceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608F22C95E532000143AF /* EKEvent+ConferenceURL.swift */; };
+		4A8608F52C95F105000143AF /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8608F42C95F105000143AF /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4A8608E82C8E5130000143AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4A8608F02C94D8E8000143AF /* SelectedCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCalendar.swift; sourceTree = "<group>"; };
 		4A8608F22C95E532000143AF /* EKEvent+ConferenceURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+ConferenceURL.swift"; sourceTree = "<group>"; };
+		4A8608F42C95F105000143AF /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				4A8608E62C8E4474000143AF /* AppState.swift */,
 				4A8608F22C95E532000143AF /* EKEvent+ConferenceURL.swift */,
 				4A8608F02C94D8E8000143AF /* SelectedCalendar.swift */,
+				4A8608F42C95F105000143AF /* Color+Hex.swift */,
 			);
 			path = Obire;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8608F52C95F105000143AF /* Color+Hex.swift in Sources */,
 				4A8608F32C95E532000143AF /* EKEvent+ConferenceURL.swift in Sources */,
 				4A8608F12C94D8E8000143AF /* SelectedCalendar.swift in Sources */,
 				4A8608BC2C8E40CD000143AF /* ContentView.swift in Sources */,
