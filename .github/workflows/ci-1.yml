@@ -1,4 +1,4 @@
-name: CI
+name: CI-1
 
 on:
   push:
@@ -14,4 +14,4 @@ jobs:
         run: sudo xcode-select -s /Applications/Xcode_15.4.app
       - name: Build and Test
         run: |
-          xcodebuild build test -scheme "Obire" | xcbeautify && exit ${PIPESTATUS[0]}
+          xcodebuild build test -scheme "Obire" -configuration debug| xcbeautify && exit ${PIPESTATUS[0]}
