@@ -68,9 +68,16 @@ final class AppState {
             refreshUpcomingEvent()
         }
         guard result.inserted else {
+            let sourceIdentifier = calendar.sourceIdentifier
+            let predicate = #Predicate { (selectedCalendar: SelectedCalendar) in
+                selectedCalendar.sourceIdentifier == sourceIdentifier
+            }
+            do {
+                try modelContext.delete(model: SelectedCalendar.self, where: predicate)
+            } catch {
+                print("Can't delete calendar: \(error.localizedDescription)")
+            }
             selectedCalendars.remove(calendar.sourceIdentifier)
-            let entry = SelectedCalendar(sourceIdentifier: calendar.sourceIdentifier)
-            modelContext.delete(entry)
             return
         }
         let entry = SelectedCalendar(sourceIdentifier: calendar.sourceIdentifier)
