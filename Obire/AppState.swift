@@ -125,3 +125,7 @@ final class AppState {
         return eventStore.events(matching: predicate)
     }
 }
+
+extension AppState {
+    static var preview: AppState { .init(modelContext: .preview) }
+}
