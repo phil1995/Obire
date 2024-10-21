@@ -2,6 +2,10 @@ import Foundation
 import EventKit
 import AppKit
 import SwiftData
+import OSLog
+
+let logger = Logger(subsystem: "de.pscoding.obire", category: "AppState")
+
 
 @MainActor
 @Observable
@@ -16,6 +20,7 @@ final class AppState {
     var showsFullScreenOverlay: Bool { fullSizeOverlayController != nil }
     
     private var calendarObservationTask: Task<Void, Never>?
+    private var showEventTimer: Timer?
     
     private var fullSizeOverlayController: NSWindowController?
     
@@ -75,7 +80,7 @@ final class AppState {
             do {
                 try modelContext.delete(model: SelectedCalendar.self, where: predicate)
             } catch {
-                print("Can't delete calendar: \(error.localizedDescription)")
+                logger.error("Can't delete calendar: \(error.localizedDescription, privacy: .public)")
             }
             selectedCalendars.remove(calendar.sourceIdentifier)
             return
@@ -101,8 +106,29 @@ final class AppState {
     }
     
     func refreshUpcomingEvent() {
+        logger.debug("Refresh upcoming event")
         let events = fetchCalendarEvents()
-        self.upcomingEvent = events.sorted(by: { $0.startDate < $1.startDate }).first
+        let currentUpcomingEvent = self.upcomingEvent
+        self.upcomingEvent = events.sorted(by: { $0.startDate < $1.startDate }).first(where: { $0.startDate >= .now })
+        guard currentUpcomingEvent != self.upcomingEvent else { return }
+        guard let upcomingEvent else { return }
+        logger.debug("Invalidate old timer")
+        showEventTimer?.invalidate()
+        guard let fireAt = Calendar.current.date(byAdding: .minute, value: -1, to: upcomingEvent.startDate) else {
+            logger.error("Failed to create fire date")
+            return
+        }
+        let timer = Timer(fire: fireAt, interval: 0, repeats: false) { [weak self] timer in
+            timer.invalidate()
+            logger.debug("Timer fired")
+            Task { @MainActor [weak self] in
+                self?.showEventTimer = nil
+                self?.wantsToShowFullScreenOverlay()
+            }
+        }
+        RunLoop.main.add(timer, forMode: .default)
+        logger.debug("Started new timer which fires at: \(fireAt, privacy: .public)")
+        showEventTimer = timer
     }
     
     private func fetchCalendarEvents() -> [EKEvent] {

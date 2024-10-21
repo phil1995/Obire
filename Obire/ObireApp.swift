@@ -121,7 +121,7 @@ struct CountDownTimer: View {
 class FullSizeOverlayController<RootView: View>: NSWindowController {
     convenience init(rootView: RootView) {
         let hostingController = NSHostingController(rootView: rootView)
-        let window = NSWindow(contentViewController: hostingController)
+        let window = FullSizeWindow(contentViewController: hostingController)
         window.styleMask = .fullSizeContentView
         if let screen = NSScreen.main {
             let screenFrame = screen.frame
@@ -129,6 +129,11 @@ class FullSizeOverlayController<RootView: View>: NSWindowController {
         }
         window.level = .floating // put window in front of all other windows
         window.collectionBehavior = [.stationary, .ignoresCycle, .fullScreenDisallowsTiling]
+        window.makeKeyAndOrderFront(nil)
+        // although it's deprecated and should not have an effect `.activateIgnoringOtherApps` still works on macOS 14
+        // This is needed to fire the full screen while being in the background
+        // TODO: Check if this can be done via Accessibility
+        NSRunningApplication.current.activate(options: [.activateAllWindows, .activateIgnoringOtherApps])
         self.init(window: window)
     }
     
@@ -139,7 +144,18 @@ class FullSizeOverlayController<RootView: View>: NSWindowController {
     
     override func close() {
         NSApplication.shared.presentationOptions = []
+        NSRunningApplication.current.hide()
         super.close()
+    }
+}
+
+final class FullSizeWindow: NSWindow {
+    override var canBecomeKey: Bool {
+        return true
+    }
+    
+    override var canBecomeMain: Bool {
+        return true
     }
 }
 
